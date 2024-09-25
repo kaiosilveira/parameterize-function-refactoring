@@ -5,3 +5,7 @@ export function tenPercentRaise(aPerson) {
 export function fivePercentRaise(aPerson) {
   aPerson.salary = aPerson.salary.multiply(1.05);
 }
+
+export function raise(aPerson, factor) {
+  aPerson.salary = aPerson.salary.multiply(1 + factor);
+}
