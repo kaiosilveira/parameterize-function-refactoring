@@ -1,4 +1,4 @@
-import { baseCharge, withinBand, topBand } from '.';
+import { baseCharge, withinBand } from '.';
 
 describe('baseCharge', () => {
   it('should return 0 when usage is less than 0', () => {
@@ -15,27 +15,15 @@ describe('baseCharge', () => {
   });
 });
 
-describe('usage bands', () => {
-  describe('withinBand', () => {
-    const bottom = 100;
-    const top = 200;
+describe('withinBand', () => {
+  const bottom = 100;
+  const top = 200;
 
-    it('should return the middle band of usage', () => {
-      expect(withinBand(50, bottom, top)).toEqual(0);
-      expect(withinBand(100, bottom, top)).toEqual(0);
-      expect(withinBand(150, bottom, top)).toEqual(50);
-      expect(withinBand(200, bottom, top)).toEqual(100);
-      expect(withinBand(250, bottom, top)).toEqual(100);
-    });
-  });
-
-  describe('topBand', () => {
-    it('should return the top band of usage', () => {
-      expect(topBand(50)).toEqual(0);
-      expect(topBand(100)).toEqual(0);
-      expect(topBand(150)).toEqual(0);
-      expect(topBand(200)).toEqual(0);
-      expect(topBand(250)).toEqual(50);
-    });
+  it('should return the middle band of usage', () => {
+    expect(withinBand(50, bottom, top)).toEqual(0);
+    expect(withinBand(100, bottom, top)).toEqual(0);
+    expect(withinBand(150, bottom, top)).toEqual(50);
+    expect(withinBand(200, bottom, top)).toEqual(100);
+    expect(withinBand(250, bottom, top)).toEqual(100);
   });
 });

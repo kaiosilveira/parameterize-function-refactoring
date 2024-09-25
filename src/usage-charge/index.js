@@ -20,7 +20,3 @@ export function baseCharge(usage) {
 export function withinBand(usage, bottom, top) {
   return usage > bottom ? Math.min(usage, top) - bottom : 0;
 }
-
-export function topBand(usage) {
-  return usage > 200 ? usage - 200 : 0;
-}
