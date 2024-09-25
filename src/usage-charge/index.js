@@ -18,7 +18,7 @@ export function bottomBand(usage) {
 }
 
 export function withinBand(usage, bottom, top) {
-  return usage > 100 ? Math.min(usage, 200) - 100 : 0;
+  return usage > bottom ? Math.min(usage, top) - bottom : 0;
 }
 
 export function topBand(usage) {
