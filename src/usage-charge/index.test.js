@@ -25,12 +25,15 @@ describe('usage bands', () => {
   });
 
   describe('middleBand', () => {
+    const bottom = 100;
+    const top = 200;
+
     it('should return the middle band of usage', () => {
-      expect(middleBand(50)).toEqual(0);
-      expect(middleBand(100)).toEqual(0);
-      expect(middleBand(150)).toEqual(50);
-      expect(middleBand(200)).toEqual(100);
-      expect(middleBand(250)).toEqual(100);
+      expect(middleBand(50, bottom, top)).toEqual(0);
+      expect(middleBand(100, bottom, top)).toEqual(0);
+      expect(middleBand(150, bottom, top)).toEqual(50);
+      expect(middleBand(200, bottom, top)).toEqual(100);
+      expect(middleBand(250, bottom, top)).toEqual(100);
     });
   });
 

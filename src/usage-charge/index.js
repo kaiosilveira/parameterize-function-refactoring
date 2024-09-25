@@ -16,7 +16,7 @@ export function bottomBand(usage) {
   return Math.min(usage, 100);
 }
 
-export function middleBand(usage) {
+export function middleBand(usage, bottom, top) {
   return usage > 100 ? Math.min(usage, 200) - 100 : 0;
 }
 
